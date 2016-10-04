@@ -24,7 +24,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <% jagg.includeBlocks(outputs.top); %>                
+                <% //jagg.includeBlocks(outputs.top); %>
                 <% if(outputs.title && outputs.title=="APIs") { %><h2><%=outputs.title%></h2><% } %>            
                 <% jagg.includeBlocks(outputs.middle); %>            
             </div>
