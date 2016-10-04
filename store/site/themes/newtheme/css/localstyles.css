@@ -7,6 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+    padding-top: 50px;
 }
 .page-footer {
   position: absolute;
@@ -59,7 +60,7 @@ code {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
 }
 
 #wrapper.no-left{
@@ -73,7 +74,7 @@ code {
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    right: 250px;
+    left: 250px;
     width: 0;
     height: 100%;
     margin-left: -250px;

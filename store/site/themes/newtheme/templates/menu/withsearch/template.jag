@@ -1,0 +1,118 @@
+<% jagg.template("menu/withsearch", function(inputs, outputs, jagg) {
+  var tenant = jagg.getTenantDomain();
+    var query=request.getParameter("query");
+%>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="<%=jagg.urlTenanted("/site/pages/index.jag")%>">API Store</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <% jagg.includeBlock("user/login", null); %>
+    </div>
+</div>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+
+        <form action="<%=jagg.getMappedUrl("/site/pages/list-apis.jag")%>" id="search_apis" class="navbar-form navbar-left">
+        <div class="input-group">
+        <input type="text" class="form-control" name="query" <%if(query!=null){%> value="<%= encode.forHtml(query)%>" <%}%>
+    placeholder="<%=i18n.localize("searchAPI")%>" />
+    <span class="input-group-btn">
+        <button class="btn btn-primary search_apis" type="submit"><i class="fa fa-search"></i>Search</button>
+        </span>
+        </div>
+        <!-- /input-group -->
+        <div id="apiSearchHelp" class="hide help-popover-content" >
+    <ol>
+    <li><%=i18n.localize("searchAPIHelpMsg2")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg3")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg4")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg5")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg6")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg7")%></li>
+    <li><%=i18n.localize("searchAPIHelpMsg8")%></li>
+        </ol>
+        </div>
+        <%if(tenant != null){ %>
+    <input type="hidden" class="span5" name="tenant" value="<%= tenant %>" />
+            <%}%>
+    </form>
+  <% if(outputs.tenantDomains==null || outputs.tenantDomains.indexOf(tenant) > -1 ){%>
+    <ul class="nav navbar-nav long-navbar">
+      <% var i, link, links = outputs.links, length = links.length;
+       for(i = 0; i < length; i++) {
+       link = links[i];
+       if(link.title=='Forum' && (outputs.tenantDomains && outputs.tenantDomains.indexOf(tenant) > -1 && tenant !="carbon.super" ) ){ }else{
+       %>
+       <li <%=(link.active ? 'class="active"' : '')%>>
+       <a title="<%=link.tooltip%>" href="<%=link.url%>"<%=(link.classes ? ' class="' + link.classes + '"' : "")%>>
+       <i class="<%=link.classIcon%>"></i>
+       <%=link.title%>
+       </a>
+       </li>
+            <% } }%>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-line-chart"></i> Statistics<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" ><%=i18n.localize("apiUsage")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" ><%=i18n.localize("topUsersDropDown")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=apiCallType")%>" ><%=i18n.localize("callType")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" ><%=i18n.localize("faultyInvocationTitle")%></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav short-navbar">
+      <% var i, link, links = outputs.links, length = links.length;
+       for(i = 0; i < length; i++) {
+       link = links[i];
+       if(link.title=='Forum' && (outputs.tenantDomains && outputs.tenantDomains.indexOf(tenant) > -1 && tenant !="carbon.super" ) ){ }else{
+       %>
+       <li <%=(link.active ? 'class="active"' : '')%>>
+       <a title="<%=link.tooltip%>" href="<%=link.url%>"<%=(link.classes ? ' class="' + link.classes + '"' : "")%>>
+       <i class="<%=link.classIcon%>"></i>
+       </a>
+       </li>
+            <% } }%>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-line-chart"></i><span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" ><%=i18n.localize("apiUsage")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" ><%=i18n.localize("topUsersDropDown")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=apiCallType")%>" ><%=i18n.localize("callType")%></a>
+          </li>
+          <li>
+            <a href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" ><%=i18n.localize("faultyInvocationTitle")%></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  <%}%>
+  </div><!--/.nav-collapse -->
+</nav>
+
+<% }); %>

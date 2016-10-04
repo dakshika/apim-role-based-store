@@ -51,7 +51,7 @@
 </head>
 <body>
 
-<% jagg.includeBlock("menu/primary", {"pagePath":outputs.pagePath,"tenant":tenant}); %>
+<% jagg.includeBlock("menu/withsearch", {"pagePath":outputs.pagePath,"tenant":tenant}); %>
 
 <% jagg.includeBlocks(outputs.body); %>
 
