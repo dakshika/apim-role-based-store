@@ -32,7 +32,7 @@
         <input type="text" class="form-control" name="query" <%if(query!=null){%> value="<%= encode.forHtml(query)%>" <%}%>
     placeholder="<%=i18n.localize("searchAPI")%>" />
     <span class="input-group-btn">
-        <button class="btn btn-primary search_apis" type="submit"><i class="fa fa-search"></i>Search</button>
+        <button class="btn btn-primary search_apis" type="submit"><i class="fa fa-search"></i></button>
         </span>
         </div>
         <!-- /input-group -->
