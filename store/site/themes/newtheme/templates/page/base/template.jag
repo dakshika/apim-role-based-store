@@ -53,13 +53,18 @@
 
 <% jagg.includeBlock("menu/withsearch", {"pagePath":outputs.pagePath,"tenant":tenant}); %>
 
-<% jagg.includeBlocks(outputs.body); %>
+<div class="container">
+    <% jagg.includeBlocks(outputs.body); %>
 
-<% jagg.includeBlock("ui/dialogs", {}); %>
+    <% jagg.includeBlock("ui/dialogs", {}); %>
+</div>
 
-<footer class="page-footer text-center">                                   
-  &copy; WSO2  2015 All Rights Reserved. | 
-  <a href="http://wso2.com/products/api-manager" target="_blank">API Manager</a>
+<footer class="footer" class="container">
+    <div class="">
+        <p class="text-muted text-center"> &copy; WSO2  2015 All Rights Reserved. |
+            <a href="http://wso2.com/products/api-manager" target="_blank">API Manager</a>
+        </p>
+    </div>
 </footer>
 
 <%

@@ -3,16 +3,19 @@
     var query=request.getParameter("query");
 %>
 <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
     <div class="navbar-header">
         <a class="navbar-brand" href="<%=jagg.urlTenanted("/site/pages/index.jag")%>">API Store</a>
     </div>
     <div class="navbar-collapse collapse">
         <% jagg.includeBlock("user/login", null); %>
     </div>
+    </div>
 </div>
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-inverse">
+   <div class="container">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
       <span class="sr-only">Toggle navigation</span>
@@ -49,7 +52,7 @@
             <%}%>
     </form>
   <% if(outputs.tenantDomains==null || outputs.tenantDomains.indexOf(tenant) > -1 ){%>
-    <ul class="nav navbar-nav long-navbar">
+    <ul class="nav navbar-nav long-navbar  pull-right">
       <% var i, link, links = outputs.links, length = links.length;
        for(i = 0; i < length; i++) {
        link = links[i];
@@ -110,7 +113,7 @@
         </ul>
       </li>
     </ul>
-
+    </div>
   <%}%>
   </div><!--/.nav-collapse -->
 </nav>
