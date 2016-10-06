@@ -430,3 +430,10 @@ a.remove_rating:hover{ color: #C00}
 #apiListingPagination{
     margin-left:-15px;
 }
+
+/* Top navigation bar */
+#welcome{
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

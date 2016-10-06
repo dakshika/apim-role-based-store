@@ -135,6 +135,8 @@
     "usernamePlcHolder" : "Enter your user name.",
     "password" : "Password",
     "logged" : "Logged in as",
+    "welcome": "Welcome ",
+    "contact": "Contact",
 
     "selectTheme" : "Select a theme",
     "fancy" : "Fancy",
