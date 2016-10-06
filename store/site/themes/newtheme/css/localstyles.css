@@ -437,3 +437,23 @@ a.remove_rating:hover{ color: #C00}
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+li.nav-seperator::after {
+    content: "|";
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #fff;
+}
+
+li.nav-seperator a{
+    display: inline;
+    cursor: pointer;
+}
+
+li.nav-seperator{
+    padding: 15px 0px;
+}
+
+li.nav-seperator:last-child::after{
+    content:""
+}
