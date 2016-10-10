@@ -59,8 +59,8 @@
     <% jagg.includeBlock("ui/dialogs", {}); %>
 </div>
 
-<footer class="footer" class="container">
-    <div class="">
+<footer class="footer-bottom" class="container">
+    <div class="footer-content">
         <p class="text-muted text-center"> &copy; WSO2  2015 All Rights Reserved. |
             <a href="http://wso2.com/products/api-manager" target="_blank">API Manager</a>
         </p>
