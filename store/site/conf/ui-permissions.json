@@ -1,0 +1,7 @@
+{
+  "API_OVERVIEW": "/ui/store/api/overview",
+  "API_DOCUMENTATION": "/ui/store/api/documentation",
+  "API_CONSOLE": "/ui/store/api/api-console",
+  "API_THROTTELING": "/ui/store/api/throttling-info",
+  "API_FORUM":"/ui/store/api/forum"
+}
