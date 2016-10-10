@@ -19,23 +19,38 @@ body {
 
 #nav-main{
     background-color: #444;
+    min-height: 65px;
+    border-bottom: 5px solid #595657;
 }
 
 #nav-secondary{
-
+    margin-top: 15px;
+    border: none;
+    border-radius: 0px;
 }
 
+#nav-main .navbar-nav>li>a{
+    line-height: 28px;
+}
+
+a.link-to-provider.link-h2 {
+    display: block;
+}
 .inside-footer{
   display: block;
 }
 
-.footer {
+.footer-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #4c565e;
+}
+.footer-content p{
+    padding-top: 20px;
+    color: #fff;
 }
 
 body > .container {
@@ -245,7 +260,7 @@ code {
 .api-details-table td table th{ padding: 0 0 5px 0; min-width: 100px}
 
 
-.tab-content { border-width: 0px 1px 1px 1px; border-style: solid; border-color:#ddd; padding: 20px; 
+.tab-content { /*border-width: 0px 1px 1px 1px; border-style: solid; border-color:#ddd; */padding: 20px;
   min-height: 300px }
 
 
@@ -295,8 +310,8 @@ input#access_token {margin-right: 20px}
 #subscription-list dl{ margin: 10px;}
 
 /* Brand */
-.navbar-brand { background: url('../images/wso2.svg'); background-size: 75px ; background-repeat: no-repeat; 
-padding-left: 80px; margin-left: 10px; font-size: 1.8em; background-position: 0px 5px; }
+.navbar-brand { background: url('../images/logo-white.png'); background-repeat: no-repeat;
+padding-left: 8em; margin-left: 10px; font-size: 1.8em; background-position: 0px 8px; }
 
 
 /* Rating color */
@@ -434,7 +449,7 @@ a.remove_rating:hover{ color: #C00}
 /* Top navigation bar */
 #welcome{
     color: #fff;
-    padding-top: 15px;
+    padding-top: 18px;
     padding-bottom: 15px;
 }
 
