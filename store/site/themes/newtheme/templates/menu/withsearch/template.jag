@@ -5,16 +5,18 @@
 <div class="navbar navbar-inverse navbar-fixed-top" id="nav-main">
     <div class="container">
     <div class="navbar-header">
-        <a class="navbar-brand" href="<%=jagg.urlTenanted("/site/pages/index.jag")%>">API Store</a>
+        <a class="navbar-brand" href="<%=jagg.urlTenanted("/site/pages/index.jag")%>"></a>
     </div>
     <div class="navbar-collapse collapse">
         <% jagg.includeBlock("user/login", null); %>
     </div>
     </div>
 </div>
-
+<div class="">
+            
+</div>
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-inverse">
+<nav class="navbar navbar-default navbar-inverse" id="nav-secondary">
    <div class="container">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
