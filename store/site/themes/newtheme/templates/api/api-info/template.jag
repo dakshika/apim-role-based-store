@@ -92,15 +92,7 @@ if(tenant!=null) {
             }
         %>
 </div>
-        <%if(api.isAdvertiseOnly && api.apiOwner != null) {%>
-        	<h6><i class="icon-user"></i> <%=api.apiOwner%></h6>
-        <%}
-        else if(api.bizOwner != null){%>
-            <h6><i class="icon-user"></i> <%=api.bizOwner%></h6>
-        <%}
-        else {%>
-        	<h6><i class="icon-user"></i> <%=api.provider%></h6>
-        <%}%>
+
         <div class="row">
           <div class="col-md-6">
             <table class="api-details-table">
@@ -109,6 +101,20 @@ if(tenant!=null) {
                 <td>
                         <table  style="float:left">
                             <tbody>
+                            <tr>
+                                <th><%=i18n.localize("createdby")%>:</th>
+                                <td colspan="2">
+                                    <%if(api.isAdvertiseOnly && api.apiOwner != null) {%>
+                                        <h6><i class="fa fa-user"></i> <%=api.apiOwner%></h6>
+                                                <%}
+                                        else if(api.bizOwner != null){%>
+                                        <h6><i class="fa fa-user"></i> <%=api.bizOwner%></h6>
+                                                <%}
+                                        else {%>
+                                        <h6><i class="fa fa-user"></i> <%=api.provider%></h6>
+                                    <%}%>
+                                </td>
+                            </tr>
                             <% if(isRatingActivated){%>
                             <tr>
                                 <th><%=i18n.localize("rating")%>:</th>
