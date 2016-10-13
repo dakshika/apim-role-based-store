@@ -1,5 +1,6 @@
 <%
 var site = require("/site/conf/site.json");
+var permissionPaths = require('/site/conf/ui-permissions.json');
 //TODO : remove this when log configs are implemented
 //Log.prototype.isDebugEnabled = function () {
 //    return false;
@@ -34,6 +35,48 @@ var jagg = jagg || (function () {
     var data;
 
     var reverse_proxy;    
+
+
+    var checkUIPermission  = function (permission){
+
+        var mappedPath = '';
+        const PERMISSION_PATH = '/permission/admin/ui';
+        var getPermissions = session.get('UIPERMISSIONS');
+
+        for(var i in permissionPaths){
+            if(i == permission){
+                mappedPath = permissionPaths[i];
+                break;
+            }
+        }
+
+        if(getPermissions){
+            var index = -1;
+            for (var i = 0; i < getPermissions.length; ++i)
+            {
+                if (getPermissions[i] == PERMISSION_PATH + mappedPath)
+                {
+                    index = i;
+                    break;
+                }else if(getPermissions[i] == PERMISSION_PATH || (getPermissions[i] == PERMISSION_PATH+'/store')
+                                                ||  (getPermissions[i] == PERMISSION_PATH+'/store/api')){
+                    index = i;
+                    break;
+                }
+            }
+            
+            if ( index > -1 ){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
+    };
 
     var setData = function (d) {
         data = d;
@@ -840,6 +883,7 @@ var jagg = jagg || (function () {
     }
 
     return {
+        checkUIPermission:checkUIPermission,
         setUser:setUser,
         getUser:getUser,
         block:block,

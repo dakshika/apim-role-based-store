@@ -81,6 +81,7 @@ jagg.block("api/api-info", {
                             "tabs":[
                                 {
                                     "title":i18n.localize("overview.title"),
+                                    "permission":jagg.checkUIPermission('API_OVERVIEW'),
                                     "body":[
                                         {
                                             "name":"api/overview",
@@ -93,6 +94,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("documentation.title"),
+                                    "permission":jagg.checkUIPermission('API_DOCUMENTATION'),
                                     "body":[
                                         {
                                             "name":"api/documentation",
@@ -104,6 +106,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("apiconsole.title"),
+                                    "permission":jagg.checkUIPermission('API_CONSOLE'),
                                     "body":[
                                         {
                                             "name":"api/swagger",
@@ -116,6 +119,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("throttling.title"),
+                                    "permission":jagg.checkUIPermission('API_THROTTELING'),
                                     "body":[
                                         {
                                             "name":"api/throttling",
@@ -128,6 +132,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("forum"),
+                                    "permission":jagg.checkUIPermission('API_FORUM'),
                                     "body":[
                                         {
                                             "name":"forum/forum-list",
@@ -153,6 +158,7 @@ jagg.block("api/api-info", {
                             "tabs":[
                                 {
                                     "title":i18n.localize("overview.title"),
+                                    "permission":jagg.checkUIPermission('API_OVERVIEW'),
                                     "body":[
                                         {
                                             "name":"api/overview",
@@ -165,6 +171,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("documentation.title"),
+                                    "permission":jagg.checkUIPermission('API_DOCUMENTATION'),
                                     "body":[
                                         {
                                             "name":"api/documentation",
@@ -176,6 +183,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("throttling.title"),
+                                    "permission":jagg.checkUIPermission('API_THROTTELING'),
                                     "body":[
                                         {
                                             "name":"api/throttling",
@@ -188,6 +196,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("forum"),
+                                    "permission":jagg.checkUIPermission('API_FORUM'),
                                     "body":[
                                         {
                                             "name":"forum/forum-list",
@@ -216,6 +225,7 @@ jagg.block("api/api-info", {
                             "tabs":[
                                 {
                                     "title":i18n.localize("overview.title"),
+                                    "permission":jagg.checkUIPermission('API_OVERVIEW'),
                                     "body":[
                                         {
                                             "name":"api/overview",
@@ -228,6 +238,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("documentation.title"),
+                                    "permission":jagg.checkUIPermission('API_DOCUMENTATION'),
                                     "body":[
                                         {
                                             "name":"api/documentation",
@@ -239,6 +250,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("apiconsole.title"),
+                                    "permission":jagg.checkUIPermission('API_CONSOLE'),
                                     "body":[
                                         {
                                             "name":"api/swagger",
@@ -251,6 +263,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("throttling.title"),
+                                    "permission":jagg.checkUIPermission('API_THROTTELING'),
                                     "body":[
                                         {
                                             "name":"api/throttling",
@@ -276,6 +289,7 @@ jagg.block("api/api-info", {
                             "tabs":[
                                 {
                                     "title":i18n.localize("overview.title"),
+                                    "permission":jagg.checkUIPermission('API_OVERVIEW'),
                                     "body":[
                                         {
                                             "name":"api/overview",
@@ -288,6 +302,7 @@ jagg.block("api/api-info", {
                                 },
                                 {
                                     "title":i18n.localize("documentation.title"),
+                                    "permission":jagg.checkUIPermission('API_DOCUMENTATION'),
                                     "body":[
                                         {
                                             "name":"api/documentation",
@@ -302,6 +317,7 @@ jagg.block("api/api-info", {
                                     "body":[
                                         {
                                             "name":"api/throttling",
+                                            "permission":jagg.checkUIPermission('API_THROTTELING'),
                                             "inputs": {
                                                 "api":api,
                                                 "uriTemplates":uriTemplates
@@ -328,6 +344,7 @@ jagg.block("api/api-info", {
                     "tabs":[
                         {
                             "title":i18n.localize("overview.title"),
+                            "permission":jagg.checkUIPermission('API_OVERVIEW'),
                             "body":[
                                 {
                                     "name":"api/overview",

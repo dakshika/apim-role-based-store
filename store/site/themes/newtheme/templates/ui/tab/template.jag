@@ -1,7 +1,10 @@
 <% jagg.template("ui/tab", function(inputs, outputs, jagg) { %>
 <div class="ui-tab<%=(outputs.classes ? " " + outputs.classes : "")%>">
     <%
-        var tabs = outputs.tabs, length = tabs.length;
+        function hasPermission(a){
+            return a.permission === true;
+        }
+        var tabs = outputs.tabs.filter(hasPermission), length=tabs.length ; //need to get tabs with permissions
         var i, index, tab, classes;
     %>
     <ul class="nav nav-tabs all-tabs" role="tablist">
@@ -16,20 +19,22 @@
             clazz = "";
         }
     %>
+    <%if(tab.permission){%>
     <%if(tab.title!=undefined ||tab.title!=null){%>
         <li class="<%=clazz%>">
             <a href="#tab<%=String(i)%>"><%=tab.title%></a>
         </li>
-    <% }} %>
+    <% }} }%>
     </ul>
 
     <div class="tab-content">
     <%
     for(i = 0; i < length; i++) {
         tab = tabs[i];
+    <%if(tab.permission){%>
     %>
     <div class="tab-pane fade <% if(i==0){%>in active<% } %>" id="tab<%=String(i)%>"><% jagg.includeBlocks(tab.body); %></div>
-    <% } %>
+    <% }} %>
     </div>
 </div>
 <% }); %>

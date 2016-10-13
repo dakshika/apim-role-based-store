@@ -1,6 +1,6 @@
 <%
 include("/jagg/jagg.jag");
-
+carbon = require('carbon');
 (function () {
     response.contentType = "application/json; charset=UTF-8";
     response.addHeader('Pragma', 'No-cache');
@@ -67,6 +67,7 @@ include("/jagg/jagg.jag");
     }else if (action === "logout") {
         jagg.setUser(null);
         session.remove("selectedApp");
+        session.invalidate();
         print({
             error:false
         });
@@ -91,6 +92,19 @@ include("/jagg/jagg.jag");
         username = String(username);
         var tenant = jagg.getTenantDomain();
         result = mod.login(username, request.getParameter("password"),tenant);
+
+        //get role based UI block permission
+        var log = new Log();
+        var userObject = carbon.server.tenantUser(username);
+        var um = new carbon.user.UserManager({}, userObject.tenantId);
+        var user = um.getUser(username);
+        try {
+            var userUIPermissions = um.authorizer.getAllowedUIResourcesForUser(userObject.username, '/');
+            session.put("UIPERMISSIONS", userUIPermissions);
+        } catch (e) {
+            log.warn(e);
+        }
+        
         if (result.error) {
             obj = {
                 error:result.error,
