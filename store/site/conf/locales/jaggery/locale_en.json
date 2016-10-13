@@ -39,7 +39,7 @@
     "mySubs":"My Subscriptions",
     "billing":"Billing & Metering",
     "tiers" : "Tiers",
-    "subscribe" : "Subscribe",
+    "subscribe" : "Subscribe for this API",
     "goToSubscribe" : "Visit Publisher Store",
 
     "overview.title" : "Overview",
@@ -55,7 +55,7 @@
 
     "moreAPI" : "More APIs from",
     "recentlyAdded" : "Recently Added",
-    "searchAPI" : "Search API",
+    "searchAPI" : "Search for API",
 
     "docSum" : "Summary",
     "viewDoc" : "View Content",

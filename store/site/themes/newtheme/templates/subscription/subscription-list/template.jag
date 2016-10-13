@@ -16,6 +16,7 @@
             }
             );
         </script>
+        Select Application: 
         <select id="appListSelected" class="input-large" data-live-search="true">
             <%
                 var i, j, app, selectedApp, api, apis, key,  clazz, path, totalLength = outputs.totalLength;

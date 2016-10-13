@@ -14,9 +14,11 @@
 
 <!-- Page Content -->
     <div class="col-sm-8 col-md-9 main">
+        <div class="fi-wrapper">
          <% //jagg.includeBlocks(outputs.top); %>
          <% if(outputs.title && outputs.title=="APIs") { %><h2><%=outputs.title%></h2><% } %>
          <% jagg.includeBlocks(outputs.middle); %>
+        </div>
     </div>
  <!-- /#page-content-wrapper -->
 

@@ -13,8 +13,7 @@ body {
     background-size: cover;
 }
 #main-block{
-    background-color: #fff;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 #nav-main{
@@ -27,6 +26,7 @@ body {
     margin-top: 15px;
     border: none;
     border-radius: 0px;
+    margin-bottom: 14px;
 }
 
 #nav-main .navbar-nav>li>a{
@@ -54,7 +54,7 @@ a.link-to-provider.link-h2 {
 }
 
 body > .container {
-    padding: 10px 15px 0;
+    padding: 0px 15px 0;
 }
 /* Custom page CSS
 -------------------------------------------------- */
@@ -94,7 +94,6 @@ code {
     z-index: 1000;
     height: 100%;
     overflow-y: auto;
-    background: #fff;
     padding: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -224,7 +223,7 @@ code {
 /** thumbnail list */
 .thumbnails{ display: inline; list-style: none; padding-left: 0px;}
 .thumbnails li{ list-style: none; width:200px; float: left; margin-right: 25px}
-.thumbnails li img { width: 150px; height: 150px;}
+.thumbnails li img { width: 175px;}
 
 .form-search{ margin-bottom: 25px}
 
@@ -242,7 +241,7 @@ code {
 }
 
 #sidebar-wrapper .panel{
-  margin: 20px 20px 10px 10px;
+  margin: 0px 20px 14px 0px;
 }
 
 
@@ -471,4 +470,61 @@ li.nav-seperator{
 
 li.nav-seperator:last-child::after{
     content:""
+}
+
+/* New rules */
+.fi-wrapper {
+    background-color: #fff;
+    overflow: auto;
+    padding: 1.5em;
+    min-height: 79vh;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+}
+#sidebar-wrapper .panel .panel-heading{
+    border-radius: 0px;
+}
+
+#sidebar-wrapper .panel{
+    border:none;
+    border-radius: 0px;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.22);
+}
+
+.fi-wrapper .thumbnails li {
+    list-style: none;
+    width: 185px;
+    float: left;
+    margin-right: 16px;
+}
+
+.fi-wrapper .thumbnail,#search_apis .form-control{
+    border-radius: 0px;
+}
+#nav-secondary .navbar-form{
+    padding-left: 0px;
+    margin-left: -14px;
+    width: 30%;
+}
+#nav-main>.container .navbar-brand{
+    margin-left:0px;
+}
+.search_apis{
+    border-radius: 0px;
+}
+#search_apis .input-group{
+    width: 100%;
+}
+
+#overview-thumb{
+    width: 175px;
+}
+#block-subscription{
+    border:none;
+    border-left: 1px solid darkgrey;
+    border-radius: 0px;
+    box-shadow:none;
 }
