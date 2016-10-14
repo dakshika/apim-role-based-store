@@ -27,7 +27,7 @@ jagg.block("layout/extended", {
                 },
                 {
                     "name":"application/my-applications",
-                    "inputs":{"user":user}
+                    "inputs":{"user":user, "permission":jagg.checkUIPermission('BLOCK_MY_APPLICATIONS')}
                 }
             ],
             "middle":inputs.middle,

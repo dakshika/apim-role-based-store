@@ -1,6 +1,6 @@
 <% jagg.template("application/my-applications", function(inputs, outputs, jagg) { %>
     <%
-    if(inputs.user){
+    if(inputs.user && inputs.permission){
         var appList = outputs.applications, appCount = appList.length;
     %>
     <div id="my-applications" class="panel panel-default">

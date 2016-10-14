@@ -80,6 +80,6 @@ function addPermission(permissionString, tenantId) {
 
 Object.keys(permissionPaths).map(
     function (key) {
-        return addPermission(permissionPaths[key], tenantId);
+        return addPermission('/ui'+permissionPaths[key], tenantId);
     }
 );

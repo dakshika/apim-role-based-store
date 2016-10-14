@@ -59,7 +59,8 @@ var jagg = jagg || (function () {
                     index = i;
                     break;
                 }else if(getPermissions[i] == PERMISSION_PATH || (getPermissions[i] == PERMISSION_PATH+'/store')
-                                                ||  (getPermissions[i] == PERMISSION_PATH+'/store/api')){
+                                                ||  (getPermissions[i] == PERMISSION_PATH+'/store/api')
+                                                || (getPermissions[i] == PERMISSION_PATH+'/store/blocks') ){
                     index = i;
                     break;
                 }

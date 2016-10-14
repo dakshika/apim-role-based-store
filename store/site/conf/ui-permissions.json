@@ -3,5 +3,6 @@
   "API_DOCUMENTATION": "/store/api/documentation",
   "API_CONSOLE": "/store/api/api-console",
   "API_THROTTELING": "/store/api/throttling-info",
-  "API_FORUM":"/store/api/forum"
+  "API_FORUM":"/store/api/forum",
+  "BLOCK_MY_APPLICATIONS":"/store/blocks/my-applications"
 }
