@@ -246,7 +246,9 @@
     "newPassword" : "New Password",
     "userDetails" : "User Details",
     "privacy" : "Privacy",
-    "scope" : "Scope"
+    "scope" : "Scope",
+
+    "addComment": "Add Comment"
 
    
 }
