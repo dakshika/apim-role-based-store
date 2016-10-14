@@ -139,7 +139,7 @@
 										</div>
 
 										<div class="regenerate-wrapper row">
-											<div class="col-sm-2">
+											<div class="col-sm-4">
 												<div class="dropdown pull-left">
 													<button class="btn btn-default dropdown-toggle curlurl-genbtn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"
 													    title="View cURL command to generate a token as an end user">
@@ -151,7 +151,7 @@
 													</ul>
 												</div>
 											</div>
-											<div class="col-sm-10">
+											<div class="col-sm-8">
 												<div class="form-inline proRegenerateForm pull-right">
 
 													<% if(lenS > 0){ %>
