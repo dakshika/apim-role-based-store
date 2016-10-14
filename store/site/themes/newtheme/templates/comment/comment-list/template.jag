@@ -1,15 +1,56 @@
 <% jagg.template("comment/comment-list", function(inputs, outputs, jagg) { %>
-<% var i, comment, comments = outputs.comments, length = comments.length; %>
+<% var i, comment, comments = outputs.comments, length = comments.length;
+    if(length > 0) {
+       print('<div class="comment-count">'+ length + ' Comments: </div>') ;
+    }
+    %>
 <div id="comment-list">
     <%
+        function timeSince(date) {
+
+            var seconds = Math.floor((new Date() - date) / 1000);
+
+            var interval = Math.floor(seconds / 31536000);
+
+            if (interval > 1) {
+                return interval + " years";
+            }
+            interval = Math.floor(seconds / 2592000);
+            if (interval > 1) {
+                return interval + " months";
+            }
+            interval = Math.floor(seconds / 86400);
+            if (interval > 1) {
+                return interval + " days";
+            }
+            interval = Math.floor(seconds / 3600);
+            if (interval > 1) {
+                return interval + " hours";
+            }
+            interval = Math.floor(seconds / 60);
+            if (interval > 1) {
+                return interval + " minutes";
+            }
+            return Math.floor(seconds) + " seconds";
+        }
+
     if(length > 0) {
         for(i = 0; i < length; i++) {
             comment = comments[i];
+            var timeAgo = timeSince(comment.createdTime);
     %>
     <div class="comment">
-        <hr />
-        <div><%=i18n.localize("postComment")%> <strong><%=comment.username%></strong> <%=i18n.localize("onText")%> <span class="dateFull"><%=comment.createdTime%></span></div>
-        <div class="comment-text"><%=comment.comment%></div>
+        <div class="comment-user">
+            <span class="fa-stack fa-2x">
+                 <i class="fa fa-circle fa-stack-2x"></i>
+                 <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+        <div class="comment-body">
+            <strong><%=comment.username%></strong> - <span><%=timeAgo%> ago</span>
+            <div class="comment-text"><%=comment.comment%></div>
+        </div>
+
     </div>
     <% }
     } else {

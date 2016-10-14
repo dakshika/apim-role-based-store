@@ -528,3 +528,31 @@ li.nav-seperator:last-child::after{
     border-radius: 0px;
     box-shadow:none;
 }
+
+#comment-add{
+    overflow: auto;
+}
+
+#comment-add-button, #subscribe-button{
+    margin-top: 1em;
+    border-radius: 0px;
+}
+#comment-list{
+    border-top: 1px solid #d6d6d6;
+    margin-top: 1em;
+}
+.comment {
+    width: 100%;
+    float: left;
+}
+.comment-user {
+    margin: 10px;
+    float: left;
+}
+.comment-body{
+    float: left;
+    margin: 10px 0px;
+}
+.comment-count{
+    font-weight: bold;
+}
