@@ -1,0 +1,36 @@
+<%
+jagg.block("application/my-applications", {
+    initializer:function (data) {
+
+    },
+
+    getInputs:function () {
+        return {
+            "user":null
+        }
+    },
+
+    getOutputs:function (inputs) {
+
+        var applications, result, user = inputs.user;
+        if(user){
+        result = jagg.module("application").getApplications(user.username);
+        applications = result.applications;
+
+        if (result.error) {
+            return  {
+                error:true,
+                message:result.error
+            };
+        } else {
+            return {
+                "applications":applications
+            };
+        }
+
+        }
+
+    }
+
+});
+%>

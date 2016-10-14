@@ -1,0 +1,26 @@
+<% jagg.template("application/my-applications", function(inputs, outputs, jagg) { %>
+    <%
+    if(inputs.user){
+        var appList = outputs.applications, appCount = appList.length;
+    %>
+    <div id="my-applications" class="panel panel-default">
+        <div class="panel-heading"><%=i18n.localize("myApplications")%></div>
+        <div class="panel-body">
+            <% for(i = 0 ; i < appCount; i++) {
+                    var appname = appList[i].name;
+                    var subscriptionUrl = '/site/pages/subscriptions.jag?selectedApp=' + appname;
+                %>
+                <div class="apps">
+                    <a href="<%=jagg.urlTenanted(subscriptionUrl)%>">
+                    <%=appname%>
+                    </a>
+                </div>
+            <% } %>
+        <hr>
+        <a id="application-add-button" class="btn btn-primary pull-right"
+            href="<%=jagg.urlTenanted("/site/pages/applications.jag")%>">
+            <%=i18n.localize("addNewApplication")%>
+        </a>
+        </div>
+    </div>
+<% }}); %>

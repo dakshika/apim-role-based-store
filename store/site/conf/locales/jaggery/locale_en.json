@@ -248,7 +248,8 @@
     "privacy" : "Privacy",
     "scope" : "Scope",
 
-    "addComment": "Add Comment"
-
+    "addComment": "Add Comment",
+    "myApplications":"My Applications",
+    "addNewApplication": "Add New Application"
    
 }

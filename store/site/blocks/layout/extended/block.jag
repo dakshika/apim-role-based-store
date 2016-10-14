@@ -6,7 +6,8 @@ jagg.block("layout/extended", {
     },
 
     getOutputs:function (inputs) {
-    var tenantDomain = jagg.getTenantDomain();
+    var tenantDomain = jagg.getTenantDomain(),
+        user = jagg.getUser() || null;
         return {
             "title":inputs.title,
             "top":[
@@ -23,6 +24,10 @@ jagg.block("layout/extended", {
                 {
                     "name":"api/recently-added",
                     "inputs":{"tenant":tenantDomain}
+                },
+                {
+                    "name":"application/my-applications",
+                    "inputs":{"user":user}
                 }
             ],
             "middle":inputs.middle,

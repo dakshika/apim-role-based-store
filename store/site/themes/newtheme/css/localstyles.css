@@ -512,7 +512,7 @@ li.nav-seperator:last-child::after{
 #nav-main>.container .navbar-brand{
     margin-left:0px;
 }
-.search_apis{
+.search_apis, #application-add-button{
     border-radius: 0px;
 }
 #search_apis .input-group{
@@ -555,4 +555,7 @@ li.nav-seperator:last-child::after{
 }
 .comment-count{
     font-weight: bold;
+}
+.apps{
+    margin-bottom: 1em;
 }
